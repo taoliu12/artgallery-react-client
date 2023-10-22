@@ -57,7 +57,7 @@ function ArtworkGallery() {
   const fetchArtworks = async (searchParam, pageNum) => {
     try {
       const response = await fetch(
-        `/artworks?search=${searchParam}&page=${pageNum}`,
+        `${process.env.REACT_APP_API_URL}/artworks?search=${searchParam}&page=${pageNum}`,
       );
       const data = await response.json();
       setSearchArtworksResult((prevArtworks) => prevArtworks.concat(data));
@@ -70,7 +70,7 @@ function ArtworkGallery() {
   const fetchSearchedArtworks = async (searchParam, pageNum) => {
     try {
       const response = await fetch(
-        `/artworks?search=${searchParam}&page=${pageNum}`,
+        `${process.env.REACT_APP_API_URL}/artworks?search=${searchParam}&page=${pageNum}`,
       );
       const data = await response.json();
       console.log("setSearchArtworksResult", data);
