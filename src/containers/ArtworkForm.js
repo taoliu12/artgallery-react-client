@@ -16,7 +16,7 @@ export default function ArtworkForm() {
 
   const onSubmit = (artwork) => {
     console.log("submit form data", artwork);
-    fetch(`/api/artworks`, {
+    fetch(`${process.env.REACT_APP_API_URL}/api/artworks`, {
       method: "post",
       headers: {
         "Content-Type": "application/json",

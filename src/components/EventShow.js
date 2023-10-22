@@ -26,7 +26,7 @@ const EventShow = () => {
   const [event, setEvent] = useState(null);
 
   useEffect(() => {
-    fetch(`/events/${eventId}`)
+    fetch(`${process.env.REACT_APP_API_URL}/events/${eventId}`)
       .then((response) => response.json())
       .then(({ data }) => setEvent(data))
       .catch((error) => console.error(error));

@@ -14,7 +14,7 @@ const Events = () => {
   const [events, setEvents] = useState([]);
 
   useEffect(() => {
-    fetch("events")
+    fetch(process.env.REACT_APP_API_URL  + "/events")
       .then((response) => response.json())
       .then(({ data }) => {
         setEvents(data);

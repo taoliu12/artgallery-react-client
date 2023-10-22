@@ -16,7 +16,7 @@ function App() {
   const [loggedInUser, setLoggedInUser] = useState(null);
 
   useEffect(() => {
-    fetch("/userInSession")
+    fetch(process.env.REACT_APP_API_URL  + "/userInSession")
       .then((r) => r.json())
       .then((userAlreadyLoggedIn) => {
         userAlreadyLoggedIn.data &&
@@ -25,7 +25,7 @@ function App() {
   }, []);
 
   const handleLogout = () => {
-    fetch("/logout", { method: "DELETE" })
+    fetch(process.env.REACT_APP_API_URL  + "/logout", { method: "DELETE" })
       .then((r) => r.json())
       .then((json) => {
         setLoggedInUser(null);
