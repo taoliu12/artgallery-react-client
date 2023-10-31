@@ -16,7 +16,10 @@ function App() {
   const [loggedInUser, setLoggedInUser] = useState(null);
 
   useEffect(() => {
-    fetch(process.env.REACT_APP_API_URL  + "/userInSession")
+    fetch(process.env.REACT_APP_API_URL  + "/userInSession", {
+      method: 'GET',
+      credentials: 'include'
+    })
       .then((r) => r.json())
       .then((userAlreadyLoggedIn) => {
         userAlreadyLoggedIn.data &&
