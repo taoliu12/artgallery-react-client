@@ -39,7 +39,8 @@ export default function SearchForm({ searchArtworks, setPage }) {
     <Box
       sx={{
         mx: "auto",
-        mt: 5,
+        mt: 8,
+        mb: 5,
         minWidth: "344px",
         maxWidth: "400px",
         display: "flex",
