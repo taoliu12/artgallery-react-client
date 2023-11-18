@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import { Box, Typography } from "@mui/material";
 import { styled } from "@mui/system";
 import { formatDate } from "../utils/formatTime";
@@ -13,12 +13,12 @@ const Container = styled("div")({
 
 const Heading = styled(Typography)({
   fontFamily: "Georgia, serif",
-  fontSize: "3rem",
+  fontSize: "2.8rem",
 });
 
 const Date = styled(Typography)({
   fontFamily: "Georgia, serif",
-  fontSize: "2rem",
+  fontSize: "1.5rem",
 });
 
 const EventShow = () => {
@@ -49,6 +49,22 @@ const EventShow = () => {
       </Typography>
       <Typography sx={{ whiteSpace: "pre-line" }}>
         {event.attributes?.description}
+      </Typography>
+      <Typography sx={{ 
+        textAlign: "center",
+        fontFamily: "Georgia",
+        fontSize: "1.5rem",
+        lineHeight: "2rem", 
+        mt: 5,}}>
+        <Link
+          style={{ color: "black" }}
+          to={{
+            pathname: `/events`,
+          }}
+          key={event.id}
+        >
+          Back to All Events
+        </Link>
       </Typography>
       <Box height={80}></Box>
     </Container>
