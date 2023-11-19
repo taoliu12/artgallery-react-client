@@ -56,7 +56,13 @@ const HomeBanner = () => {
             <h3>HOURS:</h3>
             <i>Weekdays at 10am - 7pm, Weekends at 10am - 5pm</i>
           </Box>
-          <Box>
+          <Box
+            sx={{
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+            }}
+          >
             <h3>Admission to the gallery is always FREE.</h3>
           </Box>
         </Box>

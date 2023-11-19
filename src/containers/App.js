@@ -15,17 +15,17 @@ import "./App.scss";
 function App() {
   const [loggedInUser, setLoggedInUser] = useState(null);
 
-  useEffect(() => {
-    fetch(process.env.REACT_APP_API_URL  + "/userInSession", {
-      method: 'GET',
-      credentials: 'include'
-    })
-      .then((r) => r.json())
-      .then((userAlreadyLoggedIn) => {
-        userAlreadyLoggedIn.data &&
-          setLoggedInUser(userAlreadyLoggedIn.data.attributes);
-      });
-  }, []);
+  // useEffect(() => {
+  //   fetch(process.env.REACT_APP_API_URL  + "/userInSession", {
+  //     method: 'GET',
+  //     credentials: 'include'
+  //   })
+  //     .then((r) => r.json())
+  //     .then((userAlreadyLoggedIn) => {
+  //       userAlreadyLoggedIn.data &&
+  //         setLoggedInUser(userAlreadyLoggedIn.data.attributes);
+  //     });
+  // }, []);
 
   const handleLogout = () => {
     fetch(process.env.REACT_APP_API_URL  + "/logout", { method: "DELETE" })

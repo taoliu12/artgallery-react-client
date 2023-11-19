@@ -47,10 +47,11 @@ export default function BackToTop(props) {
         <Button
           aria-label="scroll back to top"
           sx={{
+            fontSize: '1.1rem',
             textTransform: "none",
             letterSpacing: 0,
-            borderRadius: 5,
-            px: 1,
+            borderRadius: 10,
+            px: 1.5,
             boxShadow: 3,
             backgroundColor: "gray",
             color: "white",
